@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ExcaDrive</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup-header">
+        <h1>ExcaDrive</h1>
+        <p id="host-status">Checking page support...</p>
+      </header>
+
+      <section class="card">
+        <h2>Connection</h2>
+        <p id="auth-status">Checking sign-in state...</p>
+        <div class="button-row">
+          <button id="sign-in-btn" type="button">Sign in with Google</button>
+          <button id="sign-out-btn" type="button" class="ghost">Sign out</button>
+        </div>
+        <div class="button-row single">
+          <button id="settings-btn" type="button" class="ghost">Open Settings</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Drive File</h2>
+        <p id="link-status">No linked file</p>
+        <div class="button-grid">
+          <button id="import-btn" type="button">Import from Drive</button>
+          <button id="save-as-btn" type="button">Save As</button>
+          <button id="save-btn" type="button">Save</button>
+          <button id="unlink-btn" type="button" class="ghost">Clear Link</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Files</h2>
+        <p class="hint">Recent `.excalidraw` files from your Drive</p>
+        <div id="file-list" class="file-list"></div>
+      </section>
+
+      <footer class="status" id="operation-status">Idle</footer>
+    </main>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+  </html>

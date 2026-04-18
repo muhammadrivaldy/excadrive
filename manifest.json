@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "ExcaDrive",
+  "version": "0.1.0",
+  "description": "Import and export Excalidraw scenes with Google Drive.",
+  "permissions": [
+    "activeTab",
+    "identity",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://accounts.google.com/*",
+    "https://oauth2.googleapis.com/*",
+    "https://www.googleapis.com/*",
+    "https://excalidraw.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "ExcaDrive"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://excalidraw.com/*"
+      ],
+      "js": [
+        "src/content/content-script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/content/injected-bridge.js"
+      ],
+      "matches": [
+        "https://excalidraw.com/*"
+      ]
+    }
+  ],
+  "options_page": "src/options/options.html"
+}

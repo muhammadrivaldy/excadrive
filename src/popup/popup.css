@@ -1,0 +1,160 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --ink: #1d2130;
+  --muted: #5a6278;
+  --line: #d9deed;
+  --primary: #0068ff;
+  --primary-ink: #ffffff;
+  --danger: #b93535;
+  --success: #166e3d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  background: radial-gradient(circle at top, #edf2ff 0%, var(--bg) 60%);
+  color: var(--ink);
+}
+
+body {
+  min-width: 360px;
+  max-width: 380px;
+}
+
+.popup {
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.popup-header h1 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+}
+
+.popup-header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.card p {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.button-row,
+.button-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.button-row {
+  grid-template-columns: 1fr 1fr;
+}
+
+.button-row.single {
+  margin-top: 8px;
+  grid-template-columns: 1fr;
+}
+
+.button-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 9px 8px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--primary-ink);
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+button:hover:enabled {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.ghost {
+  background: #eef2ff;
+  color: #28304f;
+  border-color: #ccd5f1;
+}
+
+.file-list {
+  display: grid;
+  gap: 6px;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.file-item {
+  width: 100%;
+  text-align: left;
+  background: #f7f9ff;
+  color: #1f2a45;
+  border-color: #dbe2f6;
+}
+
+.status {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 9px 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.status.loading {
+  color: #7a4b00;
+  border-color: #f0d4a4;
+  background: #fff6e8;
+}
+
+.status.success {
+  color: var(--success);
+  border-color: #b8dfc6;
+  background: #effbf2;
+}
+
+.status.error {
+  color: var(--danger);
+  border-color: #f1c4c4;
+  background: #fff1f1;
+}
